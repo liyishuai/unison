@@ -882,7 +882,7 @@ jobs:
     - name: Copy user manual
       if: matrix.job.publish
       continue-on-error: ${{ !(github.ref_type == 'tag' && startsWith(github.ref_name, 'v') && matrix.job.publish) }}
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v4
       with:
         name: unison-docs
         path: pkg
