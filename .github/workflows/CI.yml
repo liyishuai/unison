@@ -913,7 +913,7 @@ jobs:
         - { ocaml-version: 4.14.x, publish: true, fnsuffix: -ubuntu-22.04-x86_64 }
         - { ocaml-version: "ocaml-variants.4.14.3+options,ocaml-option-musl,ocaml-option-static,ocaml-option-flambda", publish: true, fnsuffix: -ubuntu-22.04-x86_64-static, static: -static }
         - { ocaml-version: 4.12.x }
-        - { ocaml-version: 4.08.x }
+        - { ocaml-version: ocaml-base-compiler.4.08.1 }
 
     runs-on: ubuntu-22.04
 
@@ -929,6 +929,9 @@ jobs:
         ocaml-compiler: ${{ matrix.job.ocaml-version }}
         opam-disable-sandboxing: true
         opam-pin: false
+        opam-repositories: |
+          default: git+https://github.com/ocaml/opam-repository
+          archive: git+https://github.com/ocaml/opam-repository-archive
 
     - name: Build text UI
       env:
