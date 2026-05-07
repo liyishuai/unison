@@ -475,7 +475,7 @@ let shell_internal ?(err_null = false) ?exit_status ?(input_str = "") cmd =
     Unix.handle_unix_error (fun () ->
       if err_null || input_str <> "" then
         let (sh_out, sh_in, _) as sh_full =
-          Unix.open_process_full cmd [|"PATH=" ^ env.$("PATH")|] in
+          Unix.open_process_full cmd (Unix.environment ()) in
         if input_str <> "" then begin
           output_string sh_in input_str;
           flush sh_in
