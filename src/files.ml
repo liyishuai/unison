@@ -762,7 +762,6 @@ let moveLocal (fspath, ((pathSource, uiSource, pathTarget, uiTarget),
   let realPathTo = match finishCopy copyInfo with
   | Some conflictPath -> conflictPath
   | None -> realPathTo in
-  Stasher.backup fspath localPathTo `AndRemove curTgtArch;
   performRename fspath localPathTo
     (workingDirFrom, realPathFrom) (workingDirTo, realPathTo) curTgtArch
     ~exdev:(fun () -> raise_notrace (Util.Transient "EXDEV"));
