@@ -2580,11 +2580,6 @@ let docs =
       \032  Linux users may enjoy this variant:\n\
       \032   merge = Name * -> kdiff3 -o NEW CURRENTARCHOPT CURRENT1 CURRENT2\n\
       \n\
-      \032  Ordinarily, external merge programs are only invoked when Unison is not\n\
-      \032  running in batch mode. To specify an external merge program that should\n\
-      \032  be used no matter the setting of the batch flag, use the mergebatch\n\
-      \032  preference instead of merge.\n\
-      \n\
       \032    Please post suggestions for other useful values of the merge\n\
       \032    preference to the unison-users mailing list\226\128\148we\226\128\153d like to give\n\
       \032    several examples here.\n\
